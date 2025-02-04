@@ -19,8 +19,8 @@ Rectangle {
             Image {
                 id: weatherIcon
                 source: todayWeatherData.iconUrl
-                width: 64
-                height: 64
+                width: 150
+                height: 150
                 fillMode: Image.PreserveAspectFit
             }
 
@@ -29,15 +29,17 @@ Rectangle {
                 spacing: 5
 
                 Text {
+                    anchors.horizontalCenter: parent.horizontalCenter
                     id: temperatureText
                     text: todayWeatherData.temperature
-                    font.pixelSize: 32
+                    font.pixelSize: 50
                     color: "lightblue"
                 }
                 Text {
+                    anchors.horizontalCenter: parent.horizontalCenter
                     id: conditionText
                     text: todayWeatherData.condition
-                    font.pixelSize: 24
+                    font.pixelSize: 40
                     color: "white"
                 }
             }

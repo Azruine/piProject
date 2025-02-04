@@ -20,10 +20,11 @@ Item {
 
         Column {
             anchors.centerIn: parent
-            spacing: 30
+            spacing: 20
 
             // Current Time
             Text {
+                anchors.horizontalCenter: parent.horizontalCenter
                 id: currentTimeText
                 text: Qt.formatTime(new Date(), "hh:mm:ss")
                 font.pixelSize: 40
@@ -50,6 +51,7 @@ Item {
                         color: "lightblue"
                     }
                     Text {
+                        anchors.horizontalCenter: parent.horizontalCenter
                         text: todayWeatherData.condition
                         font.pixelSize: 28
                         color: "white"
@@ -64,6 +66,7 @@ Item {
 
                 // Hourly Forecast (right column)
                 Column {
+                    anchors.verticalCenter: parent.verticalCenter
                     spacing: 5
                     Row {
                         spacing: 10
@@ -73,20 +76,20 @@ Item {
                                 spacing: 2
                                 Text {
                                     text: modelData.time  // "HH:mm"
-                                    font.pixelSize: 14
+                                    font.pixelSize: 16
                                     color: "white"
                                     horizontalAlignment: Text.AlignHCenter
                                 }
                                 Image {
-                                    width: 32
-                                    height: 32
+                                    width: 50
+                                    height: 50
                                     fillMode: Image.PreserveAspectFit
                                     source: modelData.icon
                                 }
                                 Text {
                                     text: modelData.temp
-                                    font.pixelSize: 14
-                                    color: "lightgray"
+                                    font.pixelSize: 16
+                                    color: "white"
                                     horizontalAlignment: Text.AlignHCenter
                                 }
                             }
@@ -99,7 +102,7 @@ Item {
             Row {
                 id: forecastRow
                 anchors.horizontalCenter: parent.horizontalCenter
-                spacing: 15
+                spacing: 10
                 Repeater {
                     model: weeklyWeatherModel
                     delegate: Column {
@@ -110,19 +113,19 @@ Item {
                             color: "white"
                         }
                         Image {
-                            width: 32
-                            height: 32
+                            width: 50
+                            height: 50
                             fillMode: Image.PreserveAspectFit
                             source: iconUrl
                         }
                         Text {
                             text: maxTemperature
-                            font.pixelSize: 14
+                            font.pixelSize: 16
                             color: "lightgray"
                         }
                         Text {
                             text: minTemperature
-                            font.pixelSize: 14
+                            font.pixelSize: 16
                             color: "lightgray"
                         }
                     }
