@@ -4,7 +4,6 @@ Window {
     visible: true
     width: 800
     height: 480
-    title: qsTr("Weather Dashboard")
 
     Rectangle {
         anchors.fill: parent
@@ -14,7 +13,7 @@ Window {
             anchors.centerIn: parent
             spacing: 30
 
-            // 현재 시각 표시 (동적으로 갱신되도록 Timer 사용)
+            // Current Time
             Text {
                 id: currentTimeText
                 text: Qt.formatTime(new Date(), "hh:mm:ss")
@@ -27,12 +26,12 @@ Window {
                 onTriggered: currentTimeText.text = Qt.formatTime(new Date(), "hh:mm:ss")
             }
 
-            // 오늘 날씨와 향후 6시간 기온을 수평으로 배치
+            // Today's Weather
             Row {
                 spacing: 40
                 anchors.horizontalCenter: parent.horizontalCenter
 
-                // 오늘 날씨 정보 (왼쪽 컬럼)
+                // Current Weather (left column)
                 Column {
                     spacing: 5
                     Text {
@@ -54,7 +53,7 @@ Window {
                     }
                 }
 
-                // 향후 6시간 기온 정보 (오른쪽 컬럼)
+                // Hourly Forecast (right column)
                 Column {
                     spacing: 5
                     Row {
@@ -87,7 +86,7 @@ Window {
                 }
             }
 
-            // 7일 예보 영역 (아래 배치)
+            // Weekly Forecast
             Row {
                 id: forecastRow
                 anchors.horizontalCenter: parent.horizontalCenter

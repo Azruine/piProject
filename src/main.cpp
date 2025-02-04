@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     const QStringList uiLanguages = QLocale::system().uiLanguages();
     for (const QString &locale : uiLanguages)
     {
-        const QString baseName = "piProjecFtPort_" + QLocale(locale).name();
+        const QString baseName = "piProject_" + QLocale(locale).name();
         if (translator.load(":/i18n/" + baseName))
         {
             app.installTranslator(&translator);
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("weeklyWeatherModel", weatherManager.weeklyWeatherModel());
     engine.rootContext()->setContextProperty("weatherManager", &weatherManager);
 
-    const QUrl url("qrc:/modals/weatherModal.qml");
+    const QUrl url("qrc:/Main.qml");
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated, &app, [url](QObject *obj, const QUrl &objUrl)
                      {
         if (!obj && url == objUrl)
