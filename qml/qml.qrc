@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>modals/weatherModal.qml</file>
+    </qresource>
+</RCC>
