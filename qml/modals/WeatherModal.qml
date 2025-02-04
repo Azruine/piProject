@@ -1,13 +1,22 @@
 import QtQuick
+import "../core"
 
-Window {
-    visible: true
-    width: 800
-    height: 480
+Item {
+    id: weatherModalRoot
+    anchors.fill: parent
 
     Rectangle {
         anchors.fill: parent
+        color: "#00000080"
+    }
+
+    Rectangle {
+        id: weatherModal
+        width: 700
+        height: 400
+        anchors.centerIn: parent
         color: "#2E3B4E"
+        radius: 10
 
         Column {
             anchors.centerIn: parent
@@ -120,5 +129,16 @@ Window {
                 }
             }
         }
+
+        Button {
+            anchors {
+                right: parent.right
+                top: parent.top
+                margins: 10
+            }
+            onClicked: weatherModalRoot.closeRequested()
+        }
     }
+
+    signal closeRequested()
 }

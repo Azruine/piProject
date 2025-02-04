@@ -5,8 +5,6 @@
 #include <QLocale>
 #include <QTranslator>
 
-#include <QFile>
-
 #include "core/Weather/WeatherDataManager.h"
 int main(int argc, char *argv[])
 {
