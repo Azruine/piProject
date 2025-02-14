@@ -3,7 +3,7 @@ import QtQuick
 Rectangle {
     id: weatherWidget
     width: 350
-    height: 200
+    height: 250
     color: "#2E3B4E"
     radius: 10
 
@@ -32,14 +32,14 @@ Rectangle {
                     anchors.horizontalCenter: parent.horizontalCenter
                     id: temperatureText
                     text: todayWeatherData.temperature
-                    font.pixelSize: 50
+                    font.pixelSize: 40
                     color: "lightblue"
                 }
                 Text {
                     anchors.horizontalCenter: parent.horizontalCenter
                     id: conditionText
                     text: todayWeatherData.condition
-                    font.pixelSize: 40
+                    font.pixelSize: 35
                     color: "white"
                 }
             }

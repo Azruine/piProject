@@ -4,5 +4,8 @@
         <file>core/Button.qml</file>
         <file>widgets/WeatherWidget.qml</file>
         <file>modals/WeatherModal.qml</file>
+        <file>widgets/CalendarWidget.qml</file>
+        <file>widgets/DayCell.qml</file>
+        <file>widgets/MonthGrid.qml</file>
     </qresource>
 </RCC>
